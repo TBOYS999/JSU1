@@ -1,0 +1,43 @@
+server:
+  port: 8090
+spring:
+  #  邮箱发送配置
+  mail:
+    #    host不配置会注入失败
+    port: 465
+    host: smtp.qq.com
+    username: 1938933758@qq.com
+    password: pjyrillpmnnxbggd
+    default-encoding: utf-8
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+  application:
+    name: JSU_date_out
+#    对应工程名
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://39.106.60.43:3306/jsu?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: "003924"
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+#    比如数据库中的表address_book-----对应实体类中的AddressBook，将这个设置为true可以自动对应
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+      #图片上传临时存储位置
+reggie:
+  path: /www/wwwroot/images/
