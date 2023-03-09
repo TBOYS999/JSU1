@@ -29,12 +29,12 @@ public class UserController {
         //获取邮箱号
         //相当于发送短信定义的String to
         String email = user.getPhone();
-        String subject = "瑞吉外卖";
+        String subject = "腾膳阁";
         //StringUtils.isNotEmpty字符串非空判断
         if (StringUtils.isNotEmpty(email)) {
             //发送一个四位数的验证码,把验证码变成String类型
             String code = ValidateImageCodeUtils.getSecurityCode().toString();
-            String text = "【瑞吉外卖】您好，您的登录验证码为：" + code + "，请尽快登录";
+            String text = "【腾膳阁】您好，您的登录验证码为：" + code + "，请尽快登录";
             log.info("验证码为：" + code);
             //发送短信
             userService.sendMsg(email,subject,text);

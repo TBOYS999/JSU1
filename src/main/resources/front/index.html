@@ -314,9 +314,9 @@
 
                 if(res[1].code === 1){
                   this.categoryList =[...this.categoryList ,...res[1].data]
-                  if(Array.isArray(res[1].data) && res[1].data.length > 0){
+                  if(Array.isArray(res[1].data) && res[1].data[0].length > 0){
                     this.categoryId = [...this.categoryId,...res[1].data.id]
-                    if(res[1].data.type === 1){
+                    if(res[1].data[0].type === 1){
                       this.getDishList()
                     }else{
                       this.getSetmealData()
@@ -329,8 +329,8 @@
                 if(res[2].code === 1){
                   this.categoryList = [...this.categoryList ,...res[2].data]
                   if(Array.isArray(res[2].data) && res[2].data.length > 0){
-                    this.categoryId = [...this.categoryId,...res[2].data.id]
-                    if(res[2].data.type === 1){
+                    this.categoryId = [...this.categoryId,...res[2].data[0].id]
+                    if(res[2].data[0].type === 1){
                       this.getDishList()
                     }else{
                       this.getSetmealData()
